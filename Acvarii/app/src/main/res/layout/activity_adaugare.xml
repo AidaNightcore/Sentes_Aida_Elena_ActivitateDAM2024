@@ -14,12 +14,13 @@
         tools:layout_editor_absoluteX="115dp"
         tools:layout_editor_absoluteY="285dp" />
 
-    <ListView
+    <LinearLayout
         android:id="@+id/listAcvarii"
-        android:layout_width="410dp"
-        android:layout_height="280dp"
+        android:layout_width="409dp"
+        android:layout_height="328dp"
+        android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="450dp" />
+        tools:layout_editor_absoluteY="402dp" />
 
     <EditText
         android:id="@+id/etFirma"

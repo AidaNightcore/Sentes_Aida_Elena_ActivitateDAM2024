@@ -33,6 +33,7 @@ public class AdaugareActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         Spinner spinnerCapacitate = findViewById(R.id.spinnerCapacitate);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 AdaugareAcvariu.this, // Specifici contextul activității
