@@ -28,21 +28,21 @@ public class AdaugareActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_adaugare);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.layout.activity_adaugare), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
 
         Spinner spinnerCapacitate = findViewById(R.id.spinnerCapacitate);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                AdaugareAcvariu.this, // Specifici contextul activității
-                R.array.capacitate,
-                android.R.layout.simple_spinner_item
-        );
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+//                AdaugareAcvariu.this, // Specifici contextul activității
+//                R.array.capacitate,
+//                android.R.layout.simple_spinner_item
+//        );
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerCapacitate.setAdapter(adapter);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnerCapacitate.setAdapter(adapter);
 
         Button btnAdaugare = findViewById(R.id.btnAdaugare);
         btnAdaugare.setOnClickListener(new View.OnClickListener() {

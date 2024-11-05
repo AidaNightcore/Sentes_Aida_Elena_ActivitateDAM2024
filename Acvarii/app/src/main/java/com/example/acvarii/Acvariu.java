@@ -16,7 +16,7 @@ public class Acvariu implements Parcelable {
     protected Acvariu(Parcel in) {
         forma = in.readString();
         greutate = in.readFloat();
-        capacitate = in.readFloat();
+        capacitate = in.readString();
         grosimeSticla = in.readInt();
         pret = in.readFloat();
     }
@@ -25,7 +25,7 @@ public class Acvariu implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(forma);
         dest.writeFloat(greutate);
-        dest.writeFloat(capacitate);
+        dest.writeString(capacitate);
         dest.writeInt(grosimeSticla);
         dest.writeFloat(pret);
     }
@@ -55,7 +55,7 @@ public class Acvariu implements Parcelable {
         return greutate;
     }
 
-    public float getCapacitate() {
+    public String getCapacitate() {
         return capacitate;
     }
 
@@ -67,7 +67,7 @@ public class Acvariu implements Parcelable {
         return pret;
     }
 
-    public Acvariu(String forma, float greutate, float capacitate, int grosimeSticla, float pret) {
+    public Acvariu(String forma, float greutate, String capacitate, int grosimeSticla, float pret) {
         this.forma = forma;
         this.greutate = greutate;
         this.capacitate = capacitate;
@@ -93,7 +93,7 @@ public class Acvariu implements Parcelable {
         this.greutate = greutate;
     }
 
-    public void setCapacitate(float capacitate) {
+    public void setCapacitate(String capacitate) {
         this.capacitate = capacitate;
     }
 
