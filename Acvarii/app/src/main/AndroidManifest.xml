@@ -13,7 +13,13 @@
         android:theme="@style/Theme.Acvarii"
         tools:targetApi="31">
         <activity
-            android:name=".AdaugareActivity"
+            android:name=".ListImages"
+            android:exported="false" />
+        <activity
+            android:name=".ListAcvarii"
+            android:exported="false" />
+        <activity
+            android:name=".AdaugaAcvariu"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -4,45 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdaugareActivity">
-
-    <Button
-        android:id="@+id/btnAdaugare"
-        android:layout_width="181dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="115dp"
-        android:layout_marginBottom="74dp"
-        android:text="Adauga Acvariu"
-        app:layout_constraintBottom_toTopOf="@+id/listAcvarii"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPret" />
-
-    <LinearLayout
-        android:id="@+id/listAcvarii"
-        android:layout_width="409dp"
-        android:layout_height="328dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="74dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAdaugare" />
+    tools:context=".AdaugaAcvariu">
 
     <EditText
         android:id="@+id/etFirma"
-        android:layout_width="204dp"
-        android:layout_height="41dp"
+        android:layout_width="208dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="13dp"
         android:ems="10"
         android:inputType="text"
         android:text="Name"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="27dp" />
+        app:layout_constraintBottom_toTopOf="@+id/etGreutate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etPret"
@@ -57,10 +36,16 @@
         android:id="@+id/etGreutate"
         android:layout_width="206dp"
         android:layout_height="44dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="12dp"
         android:ems="10"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="81dp" />
+        app:layout_constraintBottom_toTopOf="@+id/spinnerCapacitate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/etFirma" />
 
     <Spinner
         android:id="@+id/spinnerCapacitate"
@@ -117,4 +102,12 @@
         android:text="Grosime Sticla"
         tools:layout_editor_absoluteX="11dp"
         tools:layout_editor_absoluteY="190dp" />
+
+    <Button
+        android:id="@+id/btnAdaugare"
+        android:layout_width="198dp"
+        android:layout_height="63dp"
+        android:text="Adauga Acvariu"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="310dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
