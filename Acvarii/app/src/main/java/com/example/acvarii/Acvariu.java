@@ -3,9 +3,16 @@ package com.example.acvarii;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.List;
+import androidx.room.PrimaryKey;
+import androidx.room.Entity;
 
+import org.jetbrains.annotations.NotNull;
+
+@Entity(tableName = "Acvarii")
 public class Acvariu implements Parcelable {
+    @PrimaryKey(autoGenerate = true)
+    @NotNull
+    private int id;
     private String forma;
     private float greutate;
 
@@ -14,6 +21,7 @@ public class Acvariu implements Parcelable {
     private float pret;
 
     protected Acvariu(Parcel in) {
+        id = in.readInt();
         forma = in.readString();
         greutate = in.readFloat();
         capacitate = in.readString();
