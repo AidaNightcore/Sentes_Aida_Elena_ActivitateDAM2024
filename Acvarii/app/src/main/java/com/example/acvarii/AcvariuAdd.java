@@ -6,6 +6,7 @@ import androidx.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -40,6 +41,8 @@ public class AcvariuAdd extends AppCompatActivity {
             int brandAles = Arrays.asList(brandsArray).indexOf(acvariu.getBrandAcvariu());
             spBrandAcvariu.setSelection(brandAles);
 
+            CheckBox cbFirebase = findViewById(R.id.cbFirebase);
+
             etNumePesti.setText(String.valueOf(acvariu.getNumePesti()));
             etNrPesti.setText(String.valueOf(acvariu.getNrPesti()));
             etMarimeAcvariu.setText(String.valueOf(acvariu.getMarimeAcvariu()));
@@ -62,6 +65,16 @@ public class AcvariuAdd extends AppCompatActivity {
             String brandAvariu = spBrandAcvariu.getSelectedItem().toString();
 
             Acvariu acvariu = new Acvariu(numePesti, nrPesti, marimeAcvariu, brandAvariu);
+
+            CheckBox cbFirebase = findViewById(R.id.cbFirebase);
+            if (cbFirebase.isChecked()) {
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("acvarii");
+                String key = myRef.push().getKey();
+                if (key != null) {
+                    myRef.child(key).setValue(acvariu);
+                }
+            }
 
             // Write a message to the database
             FirebaseDatabase database = FirebaseDatabase.getInstance();

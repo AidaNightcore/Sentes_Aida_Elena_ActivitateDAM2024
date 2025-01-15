@@ -1,5 +1,6 @@
 package com.example.acvarii;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +10,12 @@ import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,6 +81,29 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent it = new Intent(getApplicationContext(), AcvariiFavourite.class);
                 startActivity(it);
+            }
+        });
+
+        Button btnFirebaseActivity = findViewById(R.id.BTNAcvariuFirebase);
+        btnFirebaseActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(getApplicationContext(), AcvariiFirebaseFavourite.class);
+                startActivity(it);
+            }
+        });
+
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("acvarii");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Toast.makeText(MainActivity.this, "Modificări detectate în Firebase!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(MainActivity.this, "Eroare: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
