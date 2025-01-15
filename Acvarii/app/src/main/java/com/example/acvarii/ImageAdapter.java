@@ -1,7 +1,6 @@
 package com.example.acvarii;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,41 +11,44 @@ import android.widget.TextView;
 import java.util.List;
 
 public class ImageAdapter extends BaseAdapter {
-    private List<ImaginiAcvariu> imaginiAcvariu = null;
-    private Context ctx;
-    private int resursaLayout;
-    public ImageAdapter(List<ImaginiAcvariu> acvarii, Context ctx, int resursaLayout)
-    {
-        this.imaginiAcvariu =acvarii;
-        this.ctx=ctx;
-        this.resursaLayout = resursaLayout;
+    public ImageAdapter(Context ctx, List<Image> imageList, int layoutId) {
+        this.ctx = ctx;
+        this.imageList = imageList;
+        this.layoutId = layoutId;
     }
+
+    private Context ctx;
+    private List<Image> imageList;
+    private int layoutId;
+
 
     @Override
     public int getCount() {
-        return imaginiAcvariu.size();
-    }
-    @Override
-    public Object getItem(int i){
-        return imaginiAcvariu.get(i);
+        return imageList.size();
     }
 
     @Override
-    public long getItemId(int i) {
-        return 0;
+    public Object getItem(int position) {
+        return imageList.get(position);
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(ctx);
-        View v = inflater.inflate(resursaLayout,viewGroup, false);
+        View v = inflater.inflate(layoutId, parent, false);
 
-        TextView textAfisat = v.findViewById(R.id.textTV);
-        ImageView imagine= v.findViewById(R.id.imageIV);
+        TextView twDescriere = v.findViewById(R.id.TWDescriere);
+        ImageView ivImage = v.findViewById(R.id.IVImage);
 
-        ImaginiAcvariu ImaginiAcvariu = (ImaginiAcvariu) getItem(i);
+        Image image = imageList.get(position);
 
-
+        twDescriere.setText(image.getDescriere());
+        ivImage.setImageBitmap(image.getImagine());
 
         return v;
     }

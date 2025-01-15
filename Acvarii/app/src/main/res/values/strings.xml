@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Acvarii</string>
+    <string-array name="brandAcvariuArray">
+        <item>Aquael</item>
+        <item>Fluval</item>
+        <item>Ferplast</item>
+    </string-array>
 </resources>

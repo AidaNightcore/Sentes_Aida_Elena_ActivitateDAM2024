@@ -4,66 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".AcvariuAdd">
+
+    <EditText
+        android:id="@+id/ETNumePesti"
+        android:layout_width="255dp"
+        android:layout_height="57dp"
+        android:ems="10"
+        android:hint="Nume Pesti"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.097" />
+
+    <EditText
+        android:id="@+id/ETMarimeAcvariu"
+        android:layout_width="255dp"
+        android:layout_height="57dp"
+        android:ems="10"
+        android:hint="Marime Acvariu"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.324" />
+
+    <EditText
+        android:id="@+id/ETnumarPesti"
+        android:layout_width="255dp"
+        android:layout_height="57dp"
+        android:ems="10"
+        android:hint="Numar  Pesti"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.209" />
+
+    <Spinner
+        android:id="@+id/SPBrandAcvariu"
+        android:layout_width="285dp"
+        android:layout_height="57dp"
+        android:entries="@array/brandAcvariuArray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.439" />
 
     <Button
-        android:id="@+id/BTNAdaugaAcvariu"
-        android:layout_width="190dp"
-        android:layout_height="63dp"
+        android:id="@+id/BTNAdauga"
+        android:layout_width="197dp"
+        android:layout_height="54dp"
         android:text="Adauga Acvariu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.158" />
-
-    <Button
-        android:id="@+id/BTNListaAcvariu"
-        android:layout_width="190dp"
-        android:layout_height="63dp"
-        android:text="Lista  Acvarii"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.276" />
-
-    <Button
-        android:id="@+id/BTNImaginiAcvariu"
-        android:layout_width="190dp"
-        android:layout_height="63dp"
-        android:text="Imagini Acvariu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.482" />
-
-    <Button
-        android:id="@+id/BTNJsonAcvariu"
-        android:layout_width="190dp"
-        android:layout_height="63dp"
-        android:text="JSON Acvariu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
-
-    <Button
-        android:id="@+id/BTNXMLAcvariu"
-        android:layout_width="190dp"
-        android:layout_height="63dp"
-        android:text="XML Acvariu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.748" />
+        app:layout_constraintVertical_bias="0.584" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

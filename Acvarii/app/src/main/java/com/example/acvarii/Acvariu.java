@@ -3,44 +3,37 @@ package com.example.acvarii;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import androidx.room.PrimaryKey;
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-import org.jetbrains.annotations.NotNull;
-
-@Entity(tableName = "Acvarii")
+@Entity(tableName = "acvarii")
 public class Acvariu implements Parcelable {
-    @PrimaryKey(autoGenerate = true)
-    @NotNull
-    private int id;
-    private String forma;
-    private float greutate;
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Acvariu{");
+        sb.append("idAcvariu=").append(idAcvariu);
+        sb.append(", numePesti='").append(numePesti).append('\'');
+        sb.append(", nrPesti=").append(nrPesti);
+        sb.append(", marimeAcvariu=").append(marimeAcvariu);
+        sb.append(", brandAcvariu='").append(brandAcvariu).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 
-    private String capacitate;
-    private int grosimeSticla;
-    private float pret;
+    @PrimaryKey(autoGenerate = true)
+    private int idAcvariu;
+    private String numePesti;
+    private int nrPesti;
+    private int marimeAcvariu;
+    private String brandAcvariu;
 
     protected Acvariu(Parcel in) {
-        id = in.readInt();
-        forma = in.readString();
-        greutate = in.readFloat();
-        capacitate = in.readString();
-        grosimeSticla = in.readInt();
-        pret = in.readFloat();
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(forma);
-        dest.writeFloat(greutate);
-        dest.writeString(capacitate);
-        dest.writeInt(grosimeSticla);
-        dest.writeFloat(pret);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
+        idAcvariu = in.readInt();
+        numePesti = in.readString();
+        nrPesti = in.readInt();
+        marimeAcvariu = in.readInt();
+        brandAcvariu = in.readString();
     }
 
     public static final Creator<Acvariu> CREATOR = new Creator<Acvariu>() {
@@ -55,64 +48,68 @@ public class Acvariu implements Parcelable {
         }
     };
 
-    public String getForma() {
-        return forma;
+    public String getNumePesti() {
+        return numePesti;
+    }
+    public int getIdAcvariu() {
+        return idAcvariu;
+    }
+    public void setIdAcvariu(int idAcvariu) {
+        this.idAcvariu = idAcvariu;
+    }
+    public void setNumePesti(String numePesti) {
+        this.numePesti = numePesti;
+    }
+    public int getNrPesti() {
+        return nrPesti;
     }
 
-    public float getGreutate() {
-        return greutate;
+    public void setNrPesti(int nrPesti) {
+        this.nrPesti = nrPesti;
     }
 
-    public String getCapacitate() {
-        return capacitate;
+    public int getMarimeAcvariu() {
+        return marimeAcvariu;
     }
 
-    public int getGrosimeSticla() {
-        return grosimeSticla;
+    public void setMarimeAcvariu(int marimeAcvariu) {
+        this.marimeAcvariu = marimeAcvariu;
     }
 
-    public float getPret() {
-        return pret;
+    public String getBrandAcvariu() {
+        return brandAcvariu;
     }
 
-    public Acvariu(String forma, float greutate, String capacitate, int grosimeSticla, float pret) {
-        this.forma = forma;
-        this.greutate = greutate;
-        this.capacitate = capacitate;
-        this.grosimeSticla = grosimeSticla;
-        this.pret = pret;
+    public void setBrandAcvariu(String brandAcvariu) {
+        this.brandAcvariu = brandAcvariu;
+    }
+
+
+    public Acvariu(String numePesti, int nrPesti, int marimeAcvariu, String brandAcvariu) {
+        this.numePesti = numePesti;
+        this.nrPesti = nrPesti;
+        this.marimeAcvariu = marimeAcvariu;
+        this.brandAcvariu = brandAcvariu;
+    }
+    public Acvariu() {
+        this.numePesti = "";
+        this.nrPesti = 0;
+        this.marimeAcvariu = 0;
+        this.brandAcvariu = "";
+    }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     @Override
-    public String toString() {
-        return "Acvariu{" +
-                "forma='" + forma + '\'' +
-                ", greutate=" + greutate +
-                ", capacitate=" + capacitate +
-                ", grosimeSticla=" + grosimeSticla +
-                ", pret=" + pret +
-                '}';
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeInt(idAcvariu);
+        dest.writeString(numePesti);
+        dest.writeInt(nrPesti);
+        dest.writeInt(marimeAcvariu);
+        dest.writeString(brandAcvariu);
     }
-    public void setForma(String forma) {
-        this.forma = forma;
-    }
-
-    public void setGreutate(float greutate) {
-        this.greutate = greutate;
-    }
-
-    public void setCapacitate(String capacitate) {
-        this.capacitate = capacitate;
-    }
-
-    public void setGrosimeSticla(int grosimeSticla) {
-        this.grosimeSticla = grosimeSticla;
-    }
-
-    public void setPret(float pret) {
-        this.pret = pret;
-    }
-
-
-
 }
