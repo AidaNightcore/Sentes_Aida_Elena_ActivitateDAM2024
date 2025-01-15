@@ -7,28 +7,16 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/BTNAdaugaAcvariu"
+        android:id="@+id/BTNJsonAcvariu"
         android:layout_width="190dp"
         android:layout_height="63dp"
-        android:text="Adauga Acvariu"
+        android:text="JSON Acvariu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.158" />
-
-    <Button
-        android:id="@+id/BTNListaAcvariu"
-        android:layout_width="190dp"
-        android:layout_height="63dp"
-        android:text="Lista  Acvarii"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.276" />
+        app:layout_constraintVertical_bias="0.745" />
 
     <Button
         android:id="@+id/BTNImaginiAcvariu"
@@ -40,19 +28,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.482" />
-
-    <Button
-        android:id="@+id/BTNJsonAcvariu"
-        android:layout_width="190dp"
-        android:layout_height="63dp"
-        android:text="JSON Acvariu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
+        app:layout_constraintVertical_bias="0.631" />
 
     <Button
         android:id="@+id/BTNXMLAcvariu"
@@ -64,6 +40,42 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.748" />
+        app:layout_constraintVertical_bias="0.86" />
+
+    <Button
+        android:id="@+id/BTNAcvariuFavourites"
+        android:layout_width="190dp"
+        android:layout_height="63dp"
+        android:text=" Acvarii Favorite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.479" />
+
+    <Button
+        android:id="@+id/BTNListaAcvariu"
+        android:layout_width="190dp"
+        android:layout_height="63dp"
+        android:text="Lista  Acvarii"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.363" />
+
+    <Button
+        android:id="@+id/BTNAdaugaAcvariu"
+        android:layout_width="190dp"
+        android:layout_height="63dp"
+        android:text="Adauga Acvariu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.208" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

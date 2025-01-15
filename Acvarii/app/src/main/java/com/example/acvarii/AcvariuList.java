@@ -1,11 +1,16 @@
 package com.example.acvarii;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +22,7 @@ public class AcvariuList extends AppCompatActivity {
     public List<Acvariu> acvariuList = new ArrayList<>();
     public AcvariuDatabase acvariuDatabase = null;
 
+    private int idModified=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,5 +44,35 @@ public class AcvariuList extends AppCompatActivity {
         ListView listView = findViewById(R.id.LVAcvariuList);
         adapter = new AcvariuAdapter(getApplicationContext(), acvariuList, R.layout.acvariu_adapter);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent modifyItemIntent = new Intent(getApplicationContext(), AcvariuAdd.class);
+                modifyItemIntent.putExtra("acvariu", acvariuList.get(position));
+                idModified = position;
+                startActivityForResult(modifyItemIntent, 301);
+            }
+        });
+
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                SharedPreferences sharedPreferences = getSharedPreferences("acvariiFavourite", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(String.valueOf(acvariuList.get(position).getIdAcvariu()), acvariuList.get(position).toString());
+                editor.apply();
+                return false;
+            }
+        });
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==RESULT_OK && requestCode==301){
+            acvariuList.set(idModified, data.getParcelableExtra("acvariu"));
+            Toast.makeText(getApplicationContext(), acvariuList.get(0).toString(), Toast.LENGTH_LONG).show();
+            adapter.notifyDataSetChanged();
+        }
     }
 }

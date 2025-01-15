@@ -32,17 +32,17 @@ public class ImageActivity extends AppCompatActivity {
         List<String> imageLink = new ArrayList<>();
         List<Bitmap> imageBitmap = new ArrayList<>();
         List<String> imageDescriere = new ArrayList<>();
-        imageLink.add("https://i.pinimg.com/736x/fd/9d/af/fd9daf0d1f0aa4e8ef0d306c72223225.jpg");
-        imageLink.add("https://i.pinimg.com/736x/b9/27/ff/b927ff71a13c9cdd2fb60f56d1a1e2a3.jpg");
-        imageLink.add("https://i.pinimg.com/736x/fd/ce/2e/fdce2e00e7c0f17a83291299b5045ec1.jpg");
+        imageLink.add("https://i.pinimg.com/736x/d8/1c/0d/d81c0da291629f3667a4cc81b999d282.jpg");
+        imageLink.add("https://i.pinimg.com/736x/db/c8/36/dbc8364834950405f52eb2cb24887023.jpg");
+        imageLink.add("https://i.pinimg.com/736x/4f/a2/83/4fa283457d5d0605706926de0359261e.jpg");
         imageLink.add("https://i.pinimg.com/736x/be/26/f9/be26f9b76658e8e7594b0b1f2982a7d5.jpg");
-        imageLink.add("https://i.pinimg.com/736x/c9/16/ed/c916ed6f94aff37fb2c62ce25b0a0da7.jpg");
+        imageLink.add("https://i.pinimg.com/736x/3c/9f/e4/3c9fe493bc74f1f44ed69d5613d7a42b.jpg");
 
-        imageDescriere.add("Item 1");
-        imageDescriere.add("Item 2");
-        imageDescriere.add("Item 3");
-        imageDescriere.add("Item 4");
-        imageDescriere.add("Item 5");
+        imageDescriere.add("Goldeen");
+        imageDescriere.add("Magikarp");
+        imageDescriere.add("Feebas");
+        imageDescriere.add("Vaporeon");
+        imageDescriere.add("Seaking");
 
         Executor executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.myLooper());

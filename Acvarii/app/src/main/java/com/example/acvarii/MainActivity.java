@@ -67,6 +67,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(it);
             }
         });
+
+        Button btnFavouriteActivity = findViewById(R.id.BTNAcvariuFavourites);
+        btnFavouriteActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(getApplicationContext(), AcvariiFavourite.class);
+                startActivity(it);
+            }
+        });
     }
 
     @Override

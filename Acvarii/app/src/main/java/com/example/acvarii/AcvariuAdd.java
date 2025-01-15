@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -59,6 +62,12 @@ public class AcvariuAdd extends AppCompatActivity {
             String brandAvariu = spBrandAcvariu.getSelectedItem().toString();
 
             Acvariu acvariu = new Acvariu(numePesti, nrPesti, marimeAcvariu, brandAvariu);
+
+            // Write a message to the database
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference myRef = database.getReference("message");
+
+            myRef.setValue("Hello, World!");
 
             Executor executor = Executors.newSingleThreadExecutor();
             executor.execute(new Runnable() {
